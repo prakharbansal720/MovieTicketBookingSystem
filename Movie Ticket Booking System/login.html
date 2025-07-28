@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 380px;
+        }
+
+        .login-container h1 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .login-container img {
+            max-width: 180px;
+            margin-bottom: 30px;
+            object-fit: contain;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-container form input {
+            width: 95%;
+            padding: 12px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container form input:focus {
+            border-color: #f00;
+        }
+
+        .login-container .forgot-password {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .login-container .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-container form button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 95%;
+            margin-top: 12px; /* To make sure button comes below password input */
+        }
+
+        .login-container form button:hover {
+            background-color: #45a049;
+        }
+
+        .social-login {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-login div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 90%;
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            height: 20px; /* Adjusted height */
+        }
+
+        .social-login div:hover {
+            background-color: #f4f4f4;
+        }
+
+        .social-login img {
+            width: 25px;
+            height: 25px;
+            margin-right: 70px;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .terms a {
+            color: #f00;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Log In</h1>
+        <img src="logo.png" alt="BookMyShow Logo">
+        <form>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+        </form>
+        <div class="forgot-password">Forgot Password?</div>
+        <div class="social-login">
+            <div>
+                <img src="google.png" alt="Google Logo">
+                <span>Continue with Google</span>
+            </div>
+            <div>
+                <img src="facebook.png" alt="Facebook Logo">
+                <span>Continue with Facebook</span>
+            </div>
+            <div>
+                <img src="mail.png" alt="Email Logo">
+                <span>Continue with Email</span>
+            </div>
+        </div>
+        <div class="terms">
+            I agree with <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</body>
+</html>

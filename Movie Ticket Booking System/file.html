@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Booking System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar">
+        <h1 class="logo">book<span>my</span>show</h1>
+        <input
+          type="text"
+          placeholder="Search for Movies, Events, Plays..."
+          class="search"
+        />
+        <div class="user-area">
+          <button class="signin" onclick="redirectToSignUp()">Sign up</button>
+          <button class="signin" onclick="redirectToLogin()">Log In</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Secondary Navigation Bar -->
+    <nav class="secondary-nav">
+      <ul>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Stream</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Plays</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Activities</a></li>
+        <li><a href="#">ListYourShow</a></li>
+        <li><a href="#">Corporates</a></li>
+        <li><a href="#">Offers</a></li>
+        <li><a href="#">Gift Cards</a></li>
+      </ul>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="banner">
+      <div class="slides">
+        <div
+          class="slide"
+          style="
+            background: url('Screenshot\ 2024-12-10\ 210356.png') no-repeat
+              center;
+            background-size: cover;
+          "
+        ></div>
+        <div
+          class="slide"
+          style="
+            background: url('banner2.jpg') no-repeat center;
+            background-size: cover;
+          "
+        ></div>
+        <div
+          class="slide"
+          style="
+            background: url('banner3.jpg') no-repeat center;
+            background-size: cover;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <!-- Movie Cards Section -->
+    <section class="movies-section">
+      <h2>Recommended Movies</h2>
+      <div class="movie-cards">
+        <!-- Manually Added 20 Movie Cards -->
+        <div class="movie-card">
+          <div class="movie-poster">
+            
+            <img style="height: 338px;" src="img-1.png" alt="Movie Poster" />
+          </div>
+         
+          
+          <div style="margin-top: 88px;padding-left: 10px;">
+          <span class="rating"><b>⭐ 8.4/10</b></span>
+          <button
+            class="book-btn"
+            onclick="openBooking('Movie Title 2', 'img-1.png')"
+          >
+            Book Now
+          </button>
+        </div>
+        <div style="background-color: white;padding-bottom: 3px;padding-top: 3px;"><p class="movie-title"><b>Pushpa 2:The rule</b></p></div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-poster">
+            
+            <img style="height: 338px;" src="img-2.png" alt="Movie Poster" />
+          </div>
+         
+          
+          <div style="margin-top: 88px;padding-left: 10px;">
+          <span class="rating"><b>⭐ 8.4/10</b></span>
+          <button
+            class="book-btn"
+            onclick="openBooking('Movie Title 2', 'img-1.png')"
+          >
+            Book Now
+          </button>
+        </div>
+        <div style="background-color: white;padding-bottom: 3px;padding-top: 3px;"><p class="movie-title"><b>Bhool Bhulaiya 3</b></p></div>
+        </div>
+
+        <div class="movie-card">
+          <div class="movie-poster">
+            
+            <img style="height: 338px;" src="img-3.png" alt="Movie Poster" />
+          </div>
+         
+          
+          <div style="margin-top: 88px;padding-left: 10px;">
+          <span class="rating"><b>⭐ 8.4/10</b></span>
+          <button
+            class="book-btn"
+            onclick="openBooking('Movie Title 2', 'img-1.png')"
+          >
+            Book Now
+          </button>
+        </div>
+        <div style="background-color: white;padding-bottom: 3px;padding-top: 3px;"><p class="movie-title"><b>Moana 2</b></p></div>
+        </div>
+
+
+        <div class="movie-card">
+          <div class="movie-poster">
+            
+            <img style="height: 338px;" src="img-4.png" alt="Movie Poster" />
+          </div>
+         
+          
+          <div style="margin-top: 88px;padding-left: 10px;">
+          <span class="rating"><b>⭐ 8.4/10</b></span>
+          <button
+            class="book-btn"
+            onclick="openBooking('Movie Title 2', 'img-1.png')"
+          >
+            Book Now
+          </button>
+        </div>
+        <div style="background-color: white;padding-bottom: 3px;padding-top: 3px;"><p class="movie-title"><b>The sabarmati report</b></p></div>
+        </div>
+
+        
+
+        
+        <!-- Repeat similar blocks for 20 cards -->
+      </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeBooking()">×</button>
+        <h2 class="modal-header" id="movieTitle">Book Tickets</h2>
+        <img id="moviePoster" class="movie-poster" alt="Movie Poster" />
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" required />
+        <label for="time">Select Time:</label>
+        <select id="time">
+          <option value="10:00 AM">10:00 AM</option>
+          <option value="1:00 PM">1:00 PM</option>
+          <option value="4:00 PM">4:00 PM</option>
+          <option value="7:00 PM">7:00 PM</option>
+        </select>
+        <div class="seats"></div>
+        <div class="modal-footer">
+          <button class="cancel-btn" onclick="closeBooking()">Cancel</button>
+          <button class="book-btn" onclick="generateTicket()">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>Your one-stop platform for booking movies, events, and shows.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: support@bookmyshow.com</p>
+          <p>Phone: +91-1234567890</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <p>
+            <a href="#">Facebook</a> | <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+          </p>
+        </div>
+      </div>
+      <p class="footer-bottom">© 2024 bookmyshow. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
